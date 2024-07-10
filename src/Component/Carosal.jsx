@@ -29,8 +29,8 @@ const PrevArrow = (props) => {
 const Carosal = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const imageClasses = ['.i1', '.i3', '.i5', '.i6', '.i2', '.i7', '.i4']; 
-  
 
+  // Ensure useEffect updates when currentSlide changes
   useEffect(() => {
     const index = currentSlide % imageClasses.length;
     const element = document.querySelector(imageClasses[index]);
@@ -41,7 +41,7 @@ const Carosal = () => {
         element.classList.remove('animate');
       }, 2000); // Duration of the animation
     }
-  }, [currentSlide]);
+  }, [currentSlide, imageClasses]);
 
   const settings = {
     infinite: true,
@@ -50,9 +50,9 @@ const Carosal = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
+    nextArrow: <PrevArrow />,
+    prevArrow: <NextArrow />,
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex), // Update currentSlide on slide change
   };
 
   const slides = [
