@@ -1,0 +1,196 @@
+.imag1 {
+    position: absolute;
+    left: 740px;
+    top: 140px;
+}
+
+.imag2 {
+    position: absolute;
+    left: 320px;
+    bottom: 150px;
+    z-index: -1;
+}
+
+.arrow1 {
+    position: absolute;
+    top: 450px;
+}
+
+.slider-container {
+    margin-left: 320px;
+    margin-top: 100px;
+    width: 520px;
+}
+
+.custom-arrow {
+    position: absolute;
+    top: 300px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.title{
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 29.05px;
+    text-align: left;
+    margin-left: 100px;
+    margin-top: 50px;
+    
+
+}
+
+.next-arrow {
+    right: 360px;
+    top: -140px;
+}
+
+.prev-arrow {
+    left: 330px;
+}
+
+.i1 {
+    position: absolute;
+    top: 250px;
+    left: 73px;
+   
+    
+}
+
+.i3 {
+    position: absolute;
+    top: 150px;
+    left: 141px;
+}
+
+.i6 {
+    position: absolute;
+    top: 280px;
+    left: 220px;
+}
+
+.i5 {
+    position: absolute;
+    top: 400px;
+    left: 220px;
+}
+
+.i7 {
+    position: absolute;
+    top: 150px;
+    left: 900px;
+}
+
+.i4 {
+    position: absolute;
+    top: 250px;
+    left: 890px;
+}
+
+.i2 {
+    position: absolute;
+    top: 350px;
+    left: 868px;
+}
+
+@keyframes moveToSlider {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-320px); } /* Adjust this value to control how far the image moves */
+    100% { transform: translateX(0); }
+}
+
+.animate {
+    animation: moveToSlider 2s ease-in-out;
+}
+
+.i1.animate, .i3.animate, .i5.animate, .i6.animate {
+    animation-name: moveToSliderLeft;
+}
+
+.i2.animate, .i7.animate, .i4.animate {
+    animation-name: moveToSliderRight;
+}
+
+@keyframes moveToSliderLeft {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(320px); } /* Adjust this value to control how far the image moves left */
+    100% { transform: translateX(0); }
+}
+
+@keyframes moveToSliderRight {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-320px); } /* Adjust this value to control how far the image moves right */
+    100% { transform: translateX(0); }
+}
+@media (min-width: 320px) and (max-width: 460px) {
+    .main {
+      margin-left: -310px;
+    }
+    .i1,.i2,.i3,.i4,.i5,.i6,i7
+    {
+        visibility: hidden;
+    }
+    .card-image{
+        width: 350px;
+        margin-left: -28px;
+    }
+    .imag2{
+        display: none;
+    }
+    .next-arrow {
+        right: 440px;
+        top: -220px;
+    }
+    
+    .prev-arrow {
+        left: 190px;
+        top:225px;
+    }
+
+    
+   
+    
+}
+@media (min-width: 460px) and (max-width: 768px) {
+    .main {
+        margin-left: -200px;
+      }
+      .imag1 {
+        position: absolute;
+        left: 550px;
+        top: 140px;
+    }
+    .imag2 {
+        position: absolute;
+        left: 130px;
+        top: 400px;
+        
+        z-index: -1;
+    }
+    .title{
+        margin-left: 200px;
+    }
+    .i1{
+        left: 40px;
+    }
+    .i6{
+        left: 100px;
+    }
+    .i5{
+        left: 50px;
+    }
+    .i3{
+        left: 100px;
+    }
+    .i4{
+        left: 680px;
+    }
+    .i7{
+        left: 700px;
+    }
+    .i2{
+        left: 630px;
+    }
+}
